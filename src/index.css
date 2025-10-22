@@ -7,7 +7,7 @@
    font-family: "Poppins", sans-serif;
 }
 
-a.active{
-  text:'red'
-  
+a.active {
+  color: rgb(124, 7, 234);
+  text-decoration: underline;
 }

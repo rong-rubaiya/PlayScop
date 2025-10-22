@@ -10,13 +10,13 @@ const Nav = () => {
   const links = <>
     <NavLink to={'/'} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Home</NavLink>
     <NavLink to={'/all-games'} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">All Games</NavLink>
-    <NavLink className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">About</NavLink>
-    <NavLink className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Register</NavLink>
+    <NavLink to={'/about'} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">About</NavLink>
+    <NavLink to={'/auth'} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Register</NavLink>
   </>;
 
   return (
     <motion.div
-      className="nav py-4 bg-gradient-to-r from-[#020024] to-[#090979] shadow-lg sticky top-0 z-50"
+      className="nav py-4 bg-gradient-to-r from-[#632b85] to-[#b77de4] shadow-lg sticky top-0 z-50"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1.5 }}
