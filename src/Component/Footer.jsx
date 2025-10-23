@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
    
-    className=" sm:footer-horizontal bg-purple-900 text-neutral-content min-h-screen text-center">
+    className=" sm:footer-horizontal bg-purple-900 text-neutral-content  text-center">
   <div className='p-10 flex flex-col sm:flex-row justify-between '>
     <aside className=''>
    <div className='flex flex-col sm:flex-row gap-3 items-center pb-3.5 sm:pb-0'><img className='h-10' src={imgLogo} alt="" /><h1 className='font-semibold text-2xl'>Play-Scop</h1></div>

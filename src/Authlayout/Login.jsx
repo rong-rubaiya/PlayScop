@@ -7,13 +7,20 @@ import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   return (
-    <div className='flex  items-center justify-center gap-8 py-10'>
-    <div className='bg-gray-300 flex flex-col   gap-4'>
+    <div className='flex flex-col sm:flex-row   items-center justify-center gap-8 py-10'>
+    <div className='bg-gray-300 flex flex-col    gap-4'>
     
-      <div className='flex gap-2 justify-center'>
+      <div className='flex gap-2 justify-center '>
         <img className='w-8 h-8 text-gray-600' src={signIn} alt="" />
         <h1 className='text-center font-bold text-3xl text-[rgb(124,7,234)]'>Sign In</h1>
       </div>
+       <p className='text-sm text-center block sm:hidden'> New here? {' '}
+         <Link to='/auth/register'>
+         <span  className='text-[rgb(124,7,234)] italic font-semibold underline'> Create {' '}
+          </span> 
+        </Link>
+          an account to get started!
+      </p>
 
       
       <motion.form
@@ -30,7 +37,7 @@ const Login = () => {
           type='email'
           placeholder='Enter Your Email'
           className='bg-white rounded-md p-3 focus:outline-none
-          placeholder:italic text-sm placeholder:text-gray-400 w-[330px]'
+          placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px]'
         />
 
         {/* password */}
@@ -39,7 +46,7 @@ const Login = () => {
           type='password'  
           placeholder='Password'
           className='bg-white rounded-md p-3 focus:outline-none
-          placeholder:italic text-sm placeholder:text-gray-400 w-[330px]'
+          placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px]'
         />
 
         {/* sign in button */}
@@ -50,7 +57,7 @@ const Login = () => {
         />
       </motion.form>
 
-      <p className='text-sm'> New here? {' '}
+      <p className='text-sm hidden sm:block'> New here? {' '}
          <Link to='/auth/register'>
          <span  className='text-[rgb(124,7,234)] italic font-semibold underline'> Create {' '}
           </span> 
