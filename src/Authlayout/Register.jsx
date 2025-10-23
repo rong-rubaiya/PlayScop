@@ -12,9 +12,11 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 
 
+
 const Register = () => {
 
   const {createUser,setUser}=use(AuthContext)
+  
 
   const [password, setPassword] = useState("");
 
@@ -42,8 +44,8 @@ const Register = () => {
       createUser(email,password)
       .then(result=>{
         const user=result.user;
-        console.log(user);
-        setUser(user)
+        
+       console.log(user);
       } )
       .catch(err=>{
         const errMessage=err.message;

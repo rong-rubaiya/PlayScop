@@ -1,17 +1,40 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
-import signIn from '../assets/user.png';
+import signInLogo from '../assets/user.png';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
+
+  const {signIn}=use(AuthContext)
+
+  const handleSignIn=(e)=>{
+    e.preventDefault();
+    const form =e.target;
+    const email=form.email.value;
+    const password=form.password.value;
+    console.log(email,password);
+
+    signIn(email,password)
+    .then(result=>{
+      const user=result.user
+      console.log(user);
+      alert('Login successfully')
+    })
+    .catch(err=>{
+      const errMessage=err.message;
+      console.log(errMessage);
+      alert(errMessage)
+    })
+  }
   return (
     <div className='flex flex-col sm:flex-row   items-center justify-center gap-8 py-10'>
     <div className='bg-gray-300 flex flex-col    gap-4'>
     
       <div className='flex gap-2 justify-center '>
-        <img className='w-8 h-8 text-gray-600' src={signIn} alt="" />
+        <img className='w-8 h-8 text-gray-600' src={signInLogo} alt="" />
         <h1 className='text-center font-bold text-3xl text-[rgb(124,7,234)]'>Sign In</h1>
       </div>
        <p className='text-sm text-center block sm:hidden'> New here? {' '}
@@ -23,7 +46,7 @@ const Login = () => {
       </p>
 
       
-      <motion.form
+      <motion.form onSubmit={handleSignIn}
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

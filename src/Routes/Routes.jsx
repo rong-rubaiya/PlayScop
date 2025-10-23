@@ -5,6 +5,7 @@ import AllGames from "../Pages/AllGames";
 import Authlayout from "../Authlayout/Authlayout";
 import Login from "../Authlayout/Login";
 import Register from "../Authlayout/Register";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<AllGames/>
+      },
+      {
+        path:'/user-profile',
+        element:<Profile/>
       }
     ]
   },
