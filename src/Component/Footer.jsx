@@ -2,14 +2,12 @@ import React from 'react';
 import imgLogo from "../assets/logo.png";
 import { FaFacebook, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
-import { motion } from 'framer-motion';
+
 
 const Footer = () => {
   return (
-    <motion.Footer
-    initial={{ y: 150, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 3 }}
+    <footer
+   
     className=" sm:footer-horizontal bg-purple-900 text-neutral-content min-h-screen text-center">
   <div className='p-10 flex flex-col sm:flex-row justify-between '>
     <aside className=''>
@@ -57,7 +55,7 @@ const Footer = () => {
 
           
  
-</motion.Footer>
+</footer>
   );
 };
 
