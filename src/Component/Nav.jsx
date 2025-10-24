@@ -68,7 +68,7 @@ const Nav = () => {
   return ( 
     
     <motion. div 
-    className="nav py-4 bg-linear-to-r from-[#201c37] to-[#636cba] shadow-lg sticky top-0 z-50 text-center" 
+    className="nav py-4 bg-linear-to-r from-[#201c37] to-[#051eff] shadow-lg sticky top-0 z-50 text-center" 
     initial={{ y: -50, opacity: 0 }} 
     animate={{ y: 0, opacity: 1 }} 
     transition={{ duration: 1.5 }} > 

@@ -9,11 +9,14 @@ import Profile from "../Pages/Profile";
 import About from './../Component/About';
 import Singlecard from "../Component/Singlecard";
 import PrivateRoutes from "../Authlayout/PrivateRoutes";
+import Error from "../Pages/Error";
 
 const router = createBrowserRouter([
   {
     path:'/',
     element:<Root></Root>,
+    errorElement:<Error></Error>,
+
     children:[
       {
         index:true,

@@ -1,5 +1,5 @@
-import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import React, { use, useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router';
 import signInLogo from '../assets/user.png';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
@@ -7,6 +7,14 @@ import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
+
+
+  const pathname=useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const[user,SetUser]=useState(null)
 
   const {signIn}=use(AuthContext)
@@ -34,7 +42,7 @@ const Login = () => {
   // console.log(user);
   return (
     <div className='flex flex-col sm:flex-row   items-center justify-center gap-8 py-10'>
-    <div className='bg-gray-300 flex flex-col    gap-4'>
+    <div className='bg-blue-100 flex flex-col    gap-4'>
     
       <div className='flex gap-2 justify-center '>
         <img className='w-8 h-8 text-gray-600' src={signInLogo} alt="" />

@@ -26,8 +26,8 @@ const Populargames = () => {
             key={game.id}
             onClick={() => navigate(`/game/${game.id}`)}
             className="cursor-pointer transform hover:scale-105 transition-transform duration-300
-                       bg-gradient-to-br from-white/20 to-white/10 
-                       rounded-2xl  overflow-hidden bg-[#292c4a]"
+                      
+                       rounded-2xl  overflow-hidden bg-[#01113d]"
           >
             <div className="flex items-center justify-center p-5 ">
               <img

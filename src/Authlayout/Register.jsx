@@ -1,5 +1,5 @@
-import React, { use, useState } from 'react';
-import { Link } from 'react-router'; 
+import React, { use, useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router'; 
 import { motion } from 'framer-motion';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
@@ -7,8 +7,20 @@ import { updateProfile } from 'firebase/auth';
 
 import signIn from '../assets/user.png';
 import { AuthContext } from '../Provider/AuthProvider';
+import openeye from '../assets/blackOpen.png'
+import hideneye from '../assets/blackHide.png'
 
 const Register = () => {
+
+  const [isOpen,setOpen]=useState(false)
+
+  const pathname=useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+
   const { createUser, setUser } = use(AuthContext); 
   const [localUser, setLocalUser] = useState(null); 
   const [password, setPassword] = useState('');
@@ -59,12 +71,12 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-gray-300 flex flex-col items-center w-full py-10 gap-4">
+    <div className="bg-blue-100 flex flex-col items-center w-full py-10 gap-4">
       <div className="flex flex-col sm:flex-row justify-center gap-5 items-center">
         <div className="flex flex-col items-center justify-center">
           <div className="flex gap-2">
             <img className="w-8 h-8 text-gray-600" src={signIn} alt="" />
-            <h1 className="font-bold text-3xl text-[rgb(124,7,234)]">
+            <h1 className="font-bold text-3xl mb-5 text-[rgb(124,7,234)]">
               {localUser ? "Sign in Successfully" : "Sign up"}
             </h1>
           </div>
@@ -126,15 +138,18 @@ const Register = () => {
               />
 
               {/* Password */}
-              <input
+             <div className='flex relative'>
+               <input
                 required
                 name="password"
-                type="password"
+                type={isOpen?'text':'password'}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="bg-gray-100 rounded-md p-3 focus:outline-none placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px]"
+                className="bg-gray-100 rounded-md p-3 focus:outline-none placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px] "
               />
+              <img onClick={()=>setOpen(!isOpen)} className='h-6 w-6 right-3 top-2 absolute cursor-pointer' src={!isOpen?hideneye:openeye}alt="" />
+             </div>
 
               {/* Password Conditions */}
               {password && (

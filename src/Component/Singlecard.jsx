@@ -1,9 +1,15 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import React, { useEffect } from "react";
+import { Link, useLoaderData, useLocation, useParams } from "react-router";
 
 const Singlecard = () => {
   const { id } = useParams();
   const data = useLoaderData();
+
+  const pathname=useLocation
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   // Find the game by ID
   const game = data.find((item) => item.id === id);
@@ -23,7 +29,7 @@ const Singlecard = () => {
         <img
           src={game.coverPhoto}
           alt={game.title}
-          className="w-full md:w-1/2 h-auto object-cover rounded-2xl border-4 border-indigo-500 shadow-lg"
+          className="w-1/2 h-auto object-cover rounded-2xl border-4 border-indigo-500 shadow-lg"
         />
 
         {/* Game Info */}
@@ -52,7 +58,10 @@ const Singlecard = () => {
           >
             Download Game
           </a>
+      <Link to={'/all-games'}><button className="btn btn-primary rounded-xl w-full">Go back</button></Link>
+
         </div>
+        
       </div>
     </div>
   );
