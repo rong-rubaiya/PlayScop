@@ -51,9 +51,11 @@ const Register = () => {
             setUser(updatedUser);
             alert("✅ Registration successful!");
           })
-          .catch((err) => console.error('Profile update error:', err.message));
+          .catch((err) => 
+            console.error('Profile update error:', err.message)
+        );
       })
-      .catch((err) => console.error('User creation error:', err.message));
+      .catch((err) => alert('User creation error:', err.message));
   };
 
   return (

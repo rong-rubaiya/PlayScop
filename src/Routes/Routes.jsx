@@ -8,6 +8,7 @@ import Register from "../Authlayout/Register";
 import Profile from "../Pages/Profile";
 import About from './../Component/About';
 import Singlecard from "../Component/Singlecard";
+import PrivateRoutes from "../Authlayout/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/singlegames/:id',
-        element:<Singlecard></Singlecard>,
+        element:<PrivateRoutes>
+          <Singlecard></Singlecard>
+        </PrivateRoutes>,
         loader:() => fetch('/games.json').then(res => res.json())
       }
     ]
