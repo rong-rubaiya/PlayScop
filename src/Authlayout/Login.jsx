@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link } from 'react-router';
 import signInLogo from '../assets/user.png';
 import { motion } from 'framer-motion';
@@ -7,6 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
+  const[user,SetUser]=useState(null)
 
   const {signIn}=use(AuthContext)
 
@@ -15,12 +16,12 @@ const Login = () => {
     const form =e.target;
     const email=form.email.value;
     const password=form.password.value;
-    console.log(email,password);
+    // console.log(email,password);
 
     signIn(email,password)
     .then(result=>{
       const user=result.user
-      console.log(user);
+      // console.log(user);
       alert('Login successfully')
     })
     .catch(err=>{
@@ -29,6 +30,8 @@ const Login = () => {
       alert(errMessage)
     })
   }
+
+  // console.log(user);
   return (
     <div className='flex flex-col sm:flex-row   items-center justify-center gap-8 py-10'>
     <div className='bg-gray-300 flex flex-col    gap-4'>

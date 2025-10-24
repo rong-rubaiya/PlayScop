@@ -1,7 +1,7 @@
 import React,{  createContext, useEffect, useState} from 'react';
 import app from '../Fairebase/fairebase.config';
 export const AuthContext=createContext()
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 
 
@@ -9,6 +9,11 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
+
+  // change location of loading
+  const [loading,setLoading]=useState(true) 
+
+
   const [user,setUser]=useState(null)
 
   // create with email and password
@@ -22,10 +27,16 @@ const AuthProvider = ({children}) => {
   const signIn=(email,password)=>{
     return signInWithEmailAndPassword(auth,email,password)
   }
+  // signout
+
+  const logOut=()=>{
+    return signOut(auth)
+  }
 
   useEffect(()=>{
     const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
       setUser(currentUser)
+      setLoading(false)
     })
     return()=>{unsubscribe()}
   },[])
@@ -34,7 +45,10 @@ const AuthProvider = ({children}) => {
     user,
     setUser,
     createUser,
-    signIn
+    signIn,
+    logOut,
+    loading,
+    setLoading
   }
   return <AuthContext value={authData}>
     {children}

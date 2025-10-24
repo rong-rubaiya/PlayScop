@@ -9,9 +9,23 @@ import { AuthContext } from '../Provider/AuthProvider';
 const Nav = () => { 
   
 
-  const {user}=use(AuthContext)
+  const {user,logOut}=use(AuthContext)
 
-  console.log(user);
+  // console.log(user);
+
+
+  // sign out function
+
+  const handleSignOut=()=>{
+    logOut()
+    .then(()=>{
+      alert('Log out successfully')
+    })
+    .catch(err=>{
+      console.log(err.message);
+      alert(err.message)
+    })
+  }
 
   
   const [isOpen, setIsOpen] = useState(false); 
@@ -31,10 +45,10 @@ const Nav = () => {
  }
  {user && 
  <>
-<button className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Sign Out</button>
+<button onClick={handleSignOut} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Sign Out</button>
 
   <NavLink to={'/user-profile'} className="font-semibold hover:text-[#d3e8ec] hover:scale-110 transition ease-in-out duration-300">
- <img className='w-8 h-8' src={user.photoURL} alt="" /></NavLink>
+ <img className='w-10 h-10 rounded-full border-1' src={user.photoURL} alt="" /></NavLink>
 
    
 
@@ -54,7 +68,7 @@ const Nav = () => {
   return ( 
     
     <motion. div 
-    className="nav py-4 bg-linear-to-r from-[#632b85] to-[#b77de4] shadow-lg sticky top-0 z-50 text-center" 
+    className="nav py-4 bg-linear-to-r from-[#201c37] to-[#636cba] shadow-lg sticky top-0 z-50 text-center" 
     initial={{ y: -50, opacity: 0 }} 
     animate={{ y: 0, opacity: 1 }} 
     transition={{ duration: 1.5 }} > 

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "1",
+    "title": "PlayerUnknown's Battlegrounds: PUBG",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r0y.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Call of Duty: Mobile",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2j4z.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "COD Mobile brings the iconic Call of Duty experience to mobile devices with multiple multiplayer modes and battle royale.",
+    "ratings": "4.6",
+    "developer": "Activision"
+  },
+  {
+    "id": "3",
+    "title": "Fortnite",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2h9x.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.epicgames.com/fortnite/en-US/home",
+    "description": "Fortnite is a popular battle royale game featuring building mechanics and vibrant graphics.",
+    "ratings": "4.4",
+    "developer": "Epic Games"
+  },
+  {
+    "id": "4",
+    "title": "Minecraft",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2esa.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/en-us",
+    "description": "Minecraft allows players to build and explore infinite worlds, combining creativity with survival challenges.",
+    "ratings": "4.7",
+    "developer": "Mojang"
+  },
+  {
+    "id": "5",
+    "title": "Among Us",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2j5k.jpg",
+    "category": "Party",
+    "downloadLink": "https://innersloth.com/gameAmongUs.php",
+    "description": "Among Us is a social deduction game where players identify impostors on a spaceship.",
+    "ratings": "4.3",
+    "developer": "Innersloth"
+  },
+  {
+    "id": "6",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r0y.jpg",
+    "category": "Action RPG",
+    "downloadLink": "https://genshin.hoyoverse.com/en",
+    "description": "Genshin Impact is an open-world action RPG with elemental magic, character switching, and rich storytelling.",
+    "ratings": "4.6",
+    "developer": "miHoYo"
+  },
+  {
+    "id": "7",
+    "title": "League of Legends: Wild Rift",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2j5l.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://wildrift.leagueoflegends.com/en-us/",
+    "description": "Wild Rift brings the MOBA experience of League of Legends to mobile with fast-paced 5v5 matches.",
+    "ratings": "4.5",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "8",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1txy.jpg",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build villages, raise clans, and compete in epic clan wars in Clash of Clans.",
+    "ratings": "4.4",
+    "developer": "Supercell"
+  },
+  {
+    "id": "9",
+    "title": "Clash Royale",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wya.jpg",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashroyale/",
+    "description": "A real-time multiplayer game featuring card collection, tower defense, and strategic duels.",
+    "ratings": "4.5",
+    "developer": "Supercell"
+  },
+  {
+    "id": "10",
+    "title": "Valorant",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r0z.jpg",
+    "category": "FPS",
+    "downloadLink": "https://playvalorant.com/",
+    "description": "Valorant is a tactical FPS with unique agent abilities, combining precision shooting with team strategy.",
+    "ratings": "4.6",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "11",
+    "title": "Hearthstone",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r1a.jpg",
+    "category": "Card Game",
+    "downloadLink": "https://playhearthstone.com/",
+    "description": "Hearthstone is a collectible card game set in the Warcraft universe, with strategic battles and deck building.",
+    "ratings": "4.3",
+    "developer": "Blizzard Entertainment"
+  },
+  {
+    "id": "12",
+    "title": "Candy Crush Saga",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r1b.jpg",
+    "category": "Puzzle",
+    "downloadLink": "https://king.com/game/candycrush",
+    "description": "Candy Crush Saga is a match-3 puzzle game with hundreds of colorful levels.",
+    "ratings": "4.2",
+    "developer": "King"
+  },
+  {
+    "id": "13",
+    "title": "Subway Surfers",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r1c.jpg",
+    "category": "Endless Runner",
+    "downloadLink": "https://www.kiloo.com/games/subway-surfers",
+    "description": "Run, dodge trains, and collect coins in this endless runner game.",
+    "ratings": "4.4",
+    "developer": "Kiloo"
+  },
+  {
+    "id": "14",
+    "title": "Roblox",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r10.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.roblox.com/",
+    "description": "Roblox lets users create and play millions of 3D online games created by other users.",
+    "ratings": "4.5",
+    "developer": "Roblox Corporation"
+  },
+  {
+    "id": "15",
+    "title": "Pokemon GO",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r1d.jpg",
+    "category": "AR Game",
+    "downloadLink": "https://pokemongolive.com/en/",
+    "description": "Catch Pokemon in the real world using augmented reality in Pokemon GO.",
+    "ratings": "4.3",
+    "developer": "Niantic"
+  },
+  {
+    "id": "16",
+    "title": "FIFA Mobile",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r11.jpg",
+    "category": "Sports",
+    "downloadLink": "https://www.ea.com/games/fifa/fifa-mobile",
+    "description": "Experience football action on mobile with FIFA Mobile's live events and competitive leagues.",
+    "ratings": "4.4",
+    "developer": "EA Sports"
+  },
+  {
+    "id": "17",
+    "title": "Asphalt 9: Legends",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r12.jpg",
+    "category": "Racing",
+    "downloadLink": "https://www.gameloft.com/en/game/asphalt-9-legends",
+    "description": "High-octane racing game with stunning graphics, over 50 cars, and multiplayer modes.",
+    "ratings": "4.6",
+    "developer": "Gameloft"
+  },
+  {
+    "id": "18",
+    "title": "The Sims Mobile",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r13.jpg",
+    "category": "Simulation",
+    "downloadLink": "https://www.ea.com/games/the-sims/the-sims-mobile",
+    "description": "Create and control people in The Sims Mobile, design homes, and live virtual lives.",
+    "ratings": "4.2",
+    "developer": "EA"
+  },
+  {
+    "id": "19",
+    "title": "Mobile Legends: Bang Bang",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r14.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://www.mobilelegends.com/",
+    "description": "Mobile Legends is a fast-paced 5v5 MOBA game with real-time battles and teamwork.",
+    "ratings": "4.4",
+    "developer": "Moonton"
+  },
+  {
+    "id": "20",
+    "title": "Arena of Valor",
+    "coverPhoto": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2r15.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://www.arenaofvalor.com/",
+    "description": "Arena of Valor is a popular MOBA with hero-based combat, ranked matches, and team strategy.",
+    "ratings": "4.3",
+    "developer": "Tencent Games"
+  }
+]

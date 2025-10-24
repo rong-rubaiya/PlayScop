@@ -6,6 +6,8 @@ import Authlayout from "../Authlayout/Authlayout";
 import Login from "../Authlayout/Login";
 import Register from "../Authlayout/Register";
 import Profile from "../Pages/Profile";
+import About from './../Component/About';
+import Singlecard from "../Component/Singlecard";
 
 const router = createBrowserRouter([
   {
@@ -15,19 +17,27 @@ const router = createBrowserRouter([
       {
         index:true,
         path:'/',
+        loader: () => fetch('/games.json').then(res => res.json()),
         element:<Home/>
+
       },
       {
         path:'/all-games',
+        loader: () => fetch('/games.json').then(res => res.json()),
         element:<AllGames/>
       },
       {
         path:'/about',
-        element:<AllGames/>
+        element:<About/>
       },
       {
         path:'/user-profile',
         element:<Profile/>
+      },
+      {
+        path:'/singlegames/:id',
+        element:<Singlecard></Singlecard>,
+        loader:() => fetch('/games.json').then(res => res.json())
       }
     ]
   },
