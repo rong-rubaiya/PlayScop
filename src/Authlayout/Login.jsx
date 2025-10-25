@@ -144,7 +144,7 @@ const Login = () => {
                      <img onClick={()=>setOpen(!isOpen)} className='h-6 w-6 right-3 top-2 absolute cursor-pointer' src={!isOpen?hideneye:openeye}alt="" />
                     </div>
 
-                    <p className='text-sm'> Forgot password?<span onClick={forgetPasshandle} className='underline text-blue-600'> Reset</span></p>
+                    <p className='text-sm'> Forgot password?<span onClick={forgetPasshandle} className='underline text-blue-600 cursor-pointer'> Reset</span></p>
 
         {/* sign in button */}
         <input

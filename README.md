@@ -1,16 +1,30 @@
-# React + Vite
+# 🕹️ Play-Scop — About Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **About** component introduces users to **Play-Scop**, a modern and interactive gaming hub interface built with **React**, **Tailwind CSS**, and **Framer Motion** for smooth animations.  
 
-Currently, two official plugins are available:
+This page showcases the platform’s mission, vision, and community guidelines while maintaining a sleek, futuristic design that matches the gaming theme.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎮 **Dynamic Animations** — Smooth fade and slide effects powered by `framer-motion`.
+- 🎨 **Modern UI** — Gradient backgrounds, glassmorphism sections, and responsive Tailwind design.
+- 📖 **Informative Sections** — Clearly divided sections for “Who We Are,” “Mission,” “Vision,” and “Terms & Rules.”
+- 💡 **SEO Ready** — Includes a proper `<title>` tag for page identity.
+- 🧩 **Reusable Component** — Can easily be integrated into any React Router setup.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧱 Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **React.js** | Frontend framework for building the component |
+| **Tailwind CSS** | For modern, responsive styling |
+| **Framer Motion** | For smooth entrance and scroll animations |
+
+---
+
+## 📂 File Structure
+
