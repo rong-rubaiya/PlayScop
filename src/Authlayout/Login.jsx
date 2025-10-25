@@ -1,13 +1,19 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { use, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import signInLogo from '../assets/user.png';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../Provider/AuthProvider';
+import openeye from '../assets/blackOpen.png'
+import hideneye from '../assets/blackHide.png'
+
+
 
 const Login = () => {
 
+ const [isOpen,setOpen]=useState(false)
+  
 
   const pathname=useLocation()
 
@@ -28,14 +34,16 @@ const Login = () => {
 
     signIn(email,password)
     .then(result=>{
-      const user=result.user
+      const user=result.user;
+      SetUser(user)
       // console.log(user);
-      alert('Login successfully')
+      alert('Yahoo!Login successfully')
+     
     })
     .catch(err=>{
       const errMessage=err.message;
       console.log(errMessage);
-      alert(errMessage)
+    alert(errMessage)
     })
   }
 
@@ -46,8 +54,9 @@ const Login = () => {
     
       <div className='flex gap-2 justify-center '>
         <img className='w-8 h-8 text-gray-600' src={signInLogo} alt="" />
-        <h1 className='text-center font-bold text-3xl text-[rgb(124,7,234)]'>Sign In</h1>
+        <h1 className='text-center font-bold text-3xl text-[rgb(124,7,234)]'>{user?'You are signed in':"Sign in"}</h1>
       </div>
+      {/* for sm device */}
        <p className='text-sm text-center block sm:hidden'> New here? {' '}
          <Link to='/auth/register'>
          <span  className='text-[rgb(124,7,234)] italic font-semibold underline'> Create {' '}
@@ -56,8 +65,18 @@ const Login = () => {
           an account to get started!
       </p>
 
-      
-      <motion.form onSubmit={handleSignIn}
+{
+  user?(
+    <div className="text-center flex flex-col justify-center items-center space-y-3">
+                  <img
+                    className="h-16 w-16 rounded-full border-2 border-[rgb(124,7,234)] "
+                    src={user?.photoURL || signIn}
+                    alt="User"
+                  />
+                  <h3 className="font-semibold text-lg text-center mr-16 text-gray-700">{user?.email}</h3>
+                </div>
+  ):
+<motion.form onSubmit={handleSignIn}
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -75,13 +94,17 @@ const Login = () => {
         />
 
         {/* password */}
-        <input
-          name='password'
-          type='password'  
-          placeholder='Password'
-          className='bg-white rounded-md p-3 focus:outline-none
-          placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px]'
-        />
+       <div className='flex relative'>
+                      <input
+                       required
+                       name="password"
+                       type={isOpen?'text':'password'}
+                       placeholder="Password"
+                       
+                       className="bg-gray-100 rounded-md p-3 focus:outline-none placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px] "
+                     />
+                     <img onClick={()=>setOpen(!isOpen)} className='h-6 w-6 right-3 top-2 absolute cursor-pointer' src={!isOpen?hideneye:openeye}alt="" />
+                    </div>
 
         {/* sign in button */}
         <input
@@ -90,18 +113,26 @@ const Login = () => {
           value='Sign In'
         />
       </motion.form>
-
-      <p className='text-sm hidden sm:block'> New here? {' '}
+      
+  
+}
+      
+      {!user &&
+       <p className='text-sm hidden sm:block'> New here? {' '}
          <Link to='/auth/register'>
          <span  className='text-[rgb(124,7,234)] italic font-semibold underline'> Create {' '}
           </span> 
         </Link>
           an account to get started!
-      </p>
+      </p>}
+
+     
     
     </div>
 
-      <motion.div 
+      {
+        !user &&
+        <motion.div 
        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -110,6 +141,10 @@ const Login = () => {
         <button className='btn btn-primary hover:scale-110 transition ease-in-out duration-300'><FaFacebook size={24}/> Sign in with Facbook</button>
         <button className='btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-black'><FaGithub size={24}/> Sign in with Github</button>
       </motion.div>
+      }
+
+      
+     
     </div>
   );
 };

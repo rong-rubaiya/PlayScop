@@ -42,7 +42,10 @@ const AuthProvider = ({children}) => {
       setLoading(false)
     })
     return()=>{unsubscribe()}
+    
   },[])
+
+  
 
   const authData={
     user,

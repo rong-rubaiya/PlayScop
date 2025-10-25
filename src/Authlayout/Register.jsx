@@ -5,10 +5,12 @@ import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { updateProfile } from 'firebase/auth';
 
+
 import signIn from '../assets/user.png';
 import { AuthContext } from '../Provider/AuthProvider';
 import openeye from '../assets/blackOpen.png'
 import hideneye from '../assets/blackHide.png'
+
 
 const Register = () => {
 
@@ -35,7 +37,7 @@ const Register = () => {
     e.preventDefault();
 
     if (!hasUppercase || !hasLowercase || !hasLength) {
-      alert("⚠ Please meet all password conditions before signing up!");
+    alert("⚠ Please meet all password conditions before signing up!");
       return;
     }
 
@@ -48,6 +50,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+         alert("✅ Registration successful!");
 
         updateProfile(createdUser, {
           displayName: name,
@@ -61,13 +64,13 @@ const Register = () => {
             };
             setLocalUser(updatedUser);
             setUser(updatedUser);
-            alert("✅ Registration successful!");
+         
           })
           .catch((err) => 
             console.error('Profile update error:', err.message)
         );
       })
-      .catch((err) => alert('User creation error:', err.message));
+      .catch((err) =>alert('User creation error:', err.message));
   };
 
   return (
@@ -222,6 +225,9 @@ const Register = () => {
           to get started!
         </p>
       )}
+
+      
+             
     </div>
   );
 };

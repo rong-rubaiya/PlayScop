@@ -10,7 +10,7 @@ const AllGames = () => {
   }, [pathname]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
+    <div className="max-w-7xl mx-auto px-4 py-10 ">
       <h2 className="text-3xl font-extrabold mb-6 text-center text-blue-900">
         Popular Games
       </h2>

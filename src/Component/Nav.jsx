@@ -1,12 +1,16 @@
-import React, { use, useState } from 'react'; 
+import React, { use, useRef, useState } from 'react'; 
 import { motion } from 'framer-motion'; 
 import imgLogo from "../assets/logo.png"; 
 import { NavLink } from 'react-router'; 
 import { HiMenu, HiX } from 'react-icons/hi'; 
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast, ToastContainer } from 'react-toastify';
+
 
 
 const Nav = () => { 
+
+
   
 
   const {user,logOut}=use(AuthContext)
@@ -19,7 +23,8 @@ const Nav = () => {
   const handleSignOut=()=>{
     logOut()
     .then(()=>{
-      alert('Log out successfully')
+     toast.success('Log out successfully')
+    
     })
     .catch(err=>{
       console.log(err.message);
@@ -45,7 +50,9 @@ const Nav = () => {
  }
  {user && 
  <>
-<button onClick={handleSignOut} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Sign Out</button>
+<NavLink to={'/auth/login'}>
+  <button  onClick={handleSignOut} className="font-semibold hover:text-[#d3e8ec]  hover:scale-110 transition ease-in-out duration-300">Sign Out</button>
+</NavLink>
 
   <NavLink to={'/user-profile'} className="font-semibold hover:text-[#d3e8ec] hover:scale-110 transition ease-in-out duration-300">
  <img className='w-10 h-10 rounded-full border-1' src={user.photoURL} alt="" /></NavLink>
@@ -109,7 +116,12 @@ const Nav = () => {
               initial={{ opacity: 0, y: -10 }} 
               animate={{ opacity: 1, y: 0 }} 
               className="md:hidden flex flex-col gap-4 mt-4 text-white bg-[#020024] p-4 rounded-lg shadow-lg" > {links} 
-              </motion.div> )} 
-              </motion. div> ); }; 
+              </motion.div> )
+            
+            } 
+
+              </motion. div> 
+            ); 
+            }; 
               
 export default Nav;

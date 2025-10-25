@@ -6,10 +6,13 @@ import Authlayout from "../Authlayout/Authlayout";
 import Login from "../Authlayout/Login";
 import Register from "../Authlayout/Register";
 import Profile from "../Pages/Profile";
-import About from './../Component/About';
+
 import Singlecard from "../Component/Singlecard";
 import PrivateRoutes from "../Authlayout/PrivateRoutes";
 import Error from "../Pages/Error";
+import About from "../Pages/About";
+import { path } from "framer-motion/client";
+import UpdateInfo from "../Component/UpdateInfo";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +47,9 @@ const router = createBrowserRouter([
           <Singlecard></Singlecard>
         </PrivateRoutes>,
         loader:() => fetch('/games.json').then(res => res.json())
-      }
+      },
+      {path:'/update-profile',
+        element:<UpdateInfo/>}
     ]
   },
   {
