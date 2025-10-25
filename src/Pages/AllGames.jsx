@@ -11,6 +11,7 @@ const AllGames = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 ">
+      <title>play-scope-all-games</title>
       <h2 className="text-3xl font-extrabold mb-6 text-center text-blue-900">
         Popular Games
       </h2>

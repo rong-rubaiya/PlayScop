@@ -9,6 +9,7 @@ import Footer from '../Component/Footer';
 const Error = () => {
   return (
     <>
+    <title>play-scope-error-page</title>
     <Nav/>
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-100 via-white to-pink-100 text-gray-800 overflow-hidden">
       {/* Floating animated circles */}

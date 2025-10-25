@@ -12,6 +12,7 @@ const Populargames = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 ">
+      <title>play-scope-popular-games</title>
       <h2 className="text-3xl font-extrabold mb-6 text-center text-gradient 
                      text-blue-900
                      ">
@@ -55,7 +56,7 @@ const Populargames = () => {
       <div className="
       flex justify-center items-center mt-12">
         <Link to={'/all-games'}>
-        <button className="btn btn-primary bg-blue-900 w-80 py-8 text-xl rounded-4xl" > All Games</button></Link>
+        <button className="btn btn-primary bg-blue-900 w-auto sm:w-80 py-8 text-xl rounded-4xl" > All Games</button></Link>
       </div>
     </div>
   );

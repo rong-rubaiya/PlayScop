@@ -10,7 +10,7 @@ import signIn from '../assets/user.png';
 import { AuthContext } from '../Provider/AuthProvider';
 import openeye from '../assets/blackOpen.png'
 import hideneye from '../assets/blackHide.png'
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const Register = () => {
@@ -51,7 +51,7 @@ const Register = () => {
     e.preventDefault();
 
     if (!hasUppercase || !hasLowercase || !hasLength) {
-    alert("⚠ Please meet all password conditions before signing up!");
+    toast("⚠ Please meet all password conditions before signing up!");
       return;
     }
 
@@ -64,7 +64,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
-         alert("✅ Registration successful!");
+         toast("✅ Registration successful!");
 
         updateProfile(createdUser, {
           displayName: name,
@@ -84,11 +84,12 @@ const Register = () => {
             console.error('Profile update error:', err.message)
         );
       })
-      .catch((err) =>alert('User creation error:', err.message));
+      .catch((err) =>toast('User creation error:', err.message));
   };
 
   return (
     <div className="bg-blue-100 flex flex-col items-center w-full py-10 gap-4">
+      <title>play-scope-register</title>
       <div className="flex flex-col sm:flex-row justify-center gap-5 items-center">
         <div className="flex flex-col items-center justify-center">
           <div className="flex gap-2">
@@ -111,14 +112,17 @@ const Register = () => {
 
           {/* ✅ Show user photo after signup */}
           {localUser ? (
-            <div className="text-center space-y-3">
-              <img
+            <div className="text-center space-y-3 flex flex-col justify-center items-center">
+              <Link to={'/user-profile'}><img
                 className="h-16 w-16 rounded-full border-2 border-[rgb(124,7,234)]"
                 src={localUser?.photoURL || signIn}
                 alt="User"
-              />
-              <h3 className="font-semibold text-lg text-center mr-16 text-gray-700">{localUser?.displayName}</h3>
+              /></Link>
+              <h3 className="font-semibold text-lg text-center text-gray-700">{localUser?.displayName}</h3>
+               <p className='text-sm text-gray-600'>Click Profile photo to see your profile</p>
+                                <Link to={'/'}><button className='btn btn-primary'>Go Home</button></Link>
             </div>
+            
           ) : (
             <motion.form
               onSubmit={handleSignUp}
@@ -236,7 +240,9 @@ const Register = () => {
         </p>
       )}
 
-      
+      <ToastContainer
+      position='top-center'
+      autoClose='2000'/>
              
     </div>
   );

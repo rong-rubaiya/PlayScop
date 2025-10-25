@@ -33,7 +33,8 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6 bg-gradient-to-b from-[#020024] to-[#090979]">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center p-6 bg-gradient-to-b from-[#020024] to-[#090979]">
+      <title>play-scope-profile</title>
       <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full flex flex-col items-center gap-4">
         <img
           src={user.photoURL || "/default-avatar.png"}

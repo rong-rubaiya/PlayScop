@@ -7,7 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../Provider/AuthProvider';
 import openeye from '../assets/blackOpen.png'
 import hideneye from '../assets/blackHide.png'
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 
@@ -35,10 +35,10 @@ const Login = () => {
     const email=emailref.current.value
     resetPassword(email)
     .then(()=>{
-      alert("password reset")
+      toast("password reset")
     })
     .catch(err=>{
-      alert(err.message)
+      toast(err.message)
     })
   }
 
@@ -69,19 +69,20 @@ const Login = () => {
       const user=result.user;
       SetUser(user)
       // console.log(user);
-      alert('Yahoo!Login successfully')
+      toast('Yahoo!Login successfully')
      
     })
     .catch(err=>{
       const errMessage=err.message;
       console.log(errMessage);
-    alert(errMessage)
+    toast(errMessage)
     })
   }
 
   // console.log(user);
   return (
     <div className='flex flex-col sm:flex-row   items-center justify-center gap-8 py-10'>
+      <title>play-scope-login</title>
     <div className='bg-blue-100 flex flex-col    gap-4'>
     
       <div className='flex gap-2 justify-center '>
@@ -99,13 +100,17 @@ const Login = () => {
 
 {
   user?(
-    <div className="text-center flex flex-col justify-center items-center space-y-3">
+    <div className="text-center flex flex-col justify-center items-center  space-y-3">
+                  <Link to={'/user-profile'}>
                   <img
                     className="h-16 w-16 rounded-full border-2 border-[rgb(124,7,234)] "
                     src={user?.photoURL || signIn}
                     alt="User"
                   />
-                  <h3 className="font-semibold text-lg text-center mr-16 text-gray-700">{user?.email}</h3>
+                  </Link>
+                  <h3 className="font-semibold text-lg text-center  text-gray-700">{user?.email}</h3>
+                  <p className='text-sm text-gray-600'>Click Profile photo to see your profile</p>
+                  <Link to={'/'}><button className='btn btn-primary'>Go Home</button></Link>
                 </div>
   ):
 <motion.form onSubmit={handleSignIn}
@@ -178,7 +183,9 @@ const Login = () => {
       </motion.div>
       }
 
-      
+      <ToastContainer
+      position='top-center'
+      autoClose='2000'/>
      
     </div>
   );

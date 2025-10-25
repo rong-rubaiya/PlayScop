@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen py-16 px-6">
+      <title>play-scope-about</title>
       <div className="max-w-5xl mx-auto space-y-16">
 
         {/* Title */}

@@ -33,6 +33,7 @@ const UpdateInfo = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#020024] to-[#090979] flex flex-col items-center justify-center p-6">
+      <title>play-scope-update-profile</title>
       <div className="bg-[#0d0d3a] rounded-3xl shadow-2xl p-8 max-w-md w-full flex flex-col gap-6 text-white border-2 border-purple-600">
         
         <div className="flex items-center gap-3">

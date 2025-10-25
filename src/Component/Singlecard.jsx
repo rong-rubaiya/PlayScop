@@ -5,7 +5,7 @@ const Singlecard = () => {
   const { id } = useParams();
   const data = useLoaderData();
 
-  const pathname=useLocation
+  const pathname=useLocation()
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,6 +24,7 @@ const Singlecard = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6  rounded-3xl  text-white">
+      <title>{game.title}</title>
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* Game Cover */}
         <img

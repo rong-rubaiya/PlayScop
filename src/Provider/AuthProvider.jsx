@@ -45,6 +45,7 @@ const resetPassword = (email) => {
   }
 
   const googlesignIn=()=>{
+    setLoading(true)
     return signInWithPopup(auth,googleProvider)
   }
   // signout
