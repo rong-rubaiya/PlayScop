@@ -7,10 +7,13 @@ import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../Provider/AuthProvider';
 import openeye from '../assets/blackOpen.png'
 import hideneye from '../assets/blackHide.png'
+import { toast } from 'react-toastify';
 
 
 
 const Login = () => {
+
+  const emailref=useRef()
 
  const [isOpen,setOpen]=useState(false)
   
@@ -23,8 +26,37 @@ const Login = () => {
 
   const[user,SetUser]=useState(null)
 
-  const {signIn}=use(AuthContext)
+    
+  const {signIn,googlesignIn,resetPassword}=use(AuthContext)
 
+  // reset pass
+
+  const forgetPasshandle=()=>{
+    const email=emailref.current.value
+    resetPassword(email)
+    .then(()=>{
+      alert("password reset")
+    })
+    .catch(err=>{
+      alert(err.message)
+    })
+  }
+
+
+  
+
+  const handleGoogleLogin = () => {
+  googlesignIn()
+    .then((result) => {
+      const user = result.user;
+      SetUser(user); // local state
+      toast.success("🎉 Logged in successfully!");
+    })
+    .catch((err) => {
+      console.error(err.message);
+      toast.error(err.message);
+    });
+};
   const handleSignIn=(e)=>{
     e.preventDefault();
     const form =e.target;
@@ -88,8 +120,9 @@ const Login = () => {
         <input
           name='email'
           type='email'
+          ref={emailref}
           placeholder='Enter Your Email'
-          className='bg-white rounded-md p-3 focus:outline-none
+          className='bg-white rounded-md p-3 focus:outline-none text-black
           placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px]'
         />
 
@@ -101,10 +134,12 @@ const Login = () => {
                        type={isOpen?'text':'password'}
                        placeholder="Password"
                        
-                       className="bg-gray-100 rounded-md p-3 focus:outline-none placeholder:italic text-sm placeholder:text-gray-400 w-auto sm:w-[330px] "
+                       className="bg-gray-100 rounded-md p-3 focus:outline-none placeholder:italic text-sm placeholder:text-gray-400 text-black w-auto sm:w-[330px] "
                      />
                      <img onClick={()=>setOpen(!isOpen)} className='h-6 w-6 right-3 top-2 absolute cursor-pointer' src={!isOpen?hideneye:openeye}alt="" />
                     </div>
+
+                    <p className='text-sm'> Forgot password?<span onClick={forgetPasshandle} className='underline text-blue-600'> Reset</span></p>
 
         {/* sign in button */}
         <input
@@ -137,7 +172,7 @@ const Login = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       className='flex flex-col gap-5'>
-        <button className='btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-white text-black'><FcGoogle size={24}/> Sign in with Google</button>
+        <button onClick={handleGoogleLogin} className='btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-white text-black'><FcGoogle size={24}/> Sign in with Google</button>
         <button className='btn btn-primary hover:scale-110 transition ease-in-out duration-300'><FaFacebook size={24}/> Sign in with Facbook</button>
         <button className='btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-black'><FaGithub size={24}/> Sign in with Github</button>
       </motion.div>

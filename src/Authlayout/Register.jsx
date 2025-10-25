@@ -10,6 +10,7 @@ import signIn from '../assets/user.png';
 import { AuthContext } from '../Provider/AuthProvider';
 import openeye from '../assets/blackOpen.png'
 import hideneye from '../assets/blackHide.png'
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
@@ -23,7 +24,7 @@ const Register = () => {
   }, [pathname]);
 
 
-  const { createUser, setUser } = use(AuthContext); 
+  const { createUser, setUser, googlesignIn } = use(AuthContext); 
   const [localUser, setLocalUser] = useState(null); 
   const [password, setPassword] = useState('');
 
@@ -31,6 +32,19 @@ const Register = () => {
   const hasUppercase = /[A-Z]/.test(password);
   const hasLowercase = /[a-z]/.test(password);
   const hasLength = password.length >= 6;
+
+   const handleGoogleLogin = () => {
+    googlesignIn()
+      .then((result) => {
+        const user = result.user;
+        setLocalUser(user); // local state
+        toast.success("🎉 Logged in successfully!");
+      })
+      .catch((err) => {
+        console.error(err.message);
+        toast.error(err.message);
+      });
+  };
 
   // Handle signup
   const handleSignUp = (e) => {
@@ -190,6 +204,9 @@ const Register = () => {
                 type="submit"
                 value="Sign Up"
               />
+              <button onClick={handleGoogleLogin} className="btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-white text-black">
+              <FcGoogle size={24} /> Sign In With Google
+            </button>
             </motion.form>
           )}
         </div>
@@ -202,15 +219,8 @@ const Register = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-5"
           >
-            <button className="btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-white text-black">
-              <FcGoogle size={24} /> Sign Up With Google
-            </button>
-            <button className="btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-[#1877f2] text-white">
-              <FaFacebook size={24} /> Sign Up With Facebook
-            </button>
-            <button className="btn btn-primary hover:scale-110 transition ease-in-out duration-300 bg-black text-white">
-              <FaGithub size={24} /> Sign Up With Github
-            </button>
+            
+           
           </motion.div>
         )}
       </div>
