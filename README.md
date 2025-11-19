@@ -6,7 +6,7 @@ This page showcases the platform’s mission, vision, and community guidelines w
 
 ---
 
-![Play-scop]([image-url](https://raw.githubusercontent.com/rong-rubaiya/PlayScop/refs/heads/main/Screenshot%202025-11-19%20144108.png))
+![Play-scop](https://raw.githubusercontent.com/rong-rubaiya/PlayScop/refs/heads/main/Screenshot%202025-11-19%20144108.png)
 
 ## 🚀 Features
 
